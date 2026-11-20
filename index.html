@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiet Hours Supply | Desk gear for students (demo store)</title>
+<meta name="description" content="Quiet Hours Supply is a fictional online store for student desk gear: lamps, keyboards, stands and focus tools. A class project demo; nothing is for sale.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232338C9'/%3E%3Cpath d='M20 7a9 9 0 1 0 5 15A10 10 0 0 1 20 7z' fill='%23FFD84D'/%3E%3C/svg%3E">
+<style>
+:root{
+  --cobalt:#2338C9;
+  --cobalt-2:#1C2DA6;
+  --ink:#10194F;
+  --ink-2:#4A5280;
+  --paper:#FFFFFF;
+  --tint:#EEF0FC;
+  --line:#D8DCF3;
+  --lamp:#FFD84D;
+  --ok:#137A4B;
+  --radius:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;font-family:"Figtree",system-ui,sans-serif;font-size:16.5px;line-height:1.55;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+h1,h2,h3,.display{font-family:"Unbounded","Figtree",sans-serif;letter-spacing:-.02em;line-height:1.08;margin:0}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--lamp);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* demo ribbon */
+.ribbon{background:var(--ink);color:#DDE1FA;font-size:14px;text-align:center;padding:7px 16px}
+.ribbon b{color:var(--lamp);font-weight:600}
+
+/* header */
+header.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:22px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Unbounded",sans-serif;font-weight:700;font-size:17px;letter-spacing:-.02em;white-space:nowrap}
+.brand-mark{width:34px;height:34px;border-radius:10px;background:var(--cobalt);display:grid;place-items:center}
+.nav-links{display:flex;gap:20px;list-style:none;margin:0 0 0 8px;padding:0}
+.nav-links a{text-decoration:none;font-weight:500;color:var(--ink-2)}
+.nav-links a:hover{color:var(--ink)}
+.nav-search{margin-left:auto;position:relative}
+.nav-search input{width:230px;font:inherit;font-size:15px;padding:9px 12px 9px 36px;border:1.5px solid var(--line);border-radius:10px;background:var(--tint);color:var(--ink)}
+.nav-search input:focus{outline:none;border-color:var(--cobalt);background:#fff}
+.nav-search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--ink-2)}
+.cart-btn{display:flex;align-items:center;gap:8px;background:var(--cobalt);color:#fff;border:0;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer}
+.cart-btn:hover{background:var(--cobalt-2)}
+.cart-btn .count{min-width:22px;height:22px;border-radius:11px;background:var(--lamp);color:var(--ink);font-size:13px;font-weight:700;display:grid;place-items:center;padding:0 6px}
+.cart-btn.bump{animation:bump .35s ease}
+@keyframes bump{40%{transform:scale(1.08)}}
+
+/* hero */
+.hero{background:var(--cobalt);color:#fff;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center;padding:64px 0 56px}
+.hero h1{font-size:clamp(36px,5vw,62px);font-weight:800;margin-bottom:20px}
+.hero p.lede{font-size:19px;color:#D9DEFF;max-width:30em;margin:0 0 28px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;padding:13px 20px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:16px}
+.btn-lamp{background:var(--lamp);color:var(--ink)}
+.btn-lamp:hover{background:#FFE47F}
+.btn-line{border-color:rgba(255,255,255,.6);color:#fff;background:transparent}
+.btn-line:hover{background:rgba(255,255,255,.1)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#1E2970}
+.btn-ghost{background:var(--tint);color:var(--ink)}
+.btn-ghost:hover{background:#E0E4FA}
+.desk-card{background:var(--cobalt-2);border-radius:22px;padding:18px 18px 14px;position:relative}
+.desk-card svg{display:block;width:100%;height:auto}
+.desk-cap{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:14px;color:#C7CEFF;margin-top:8px;padding:0 4px}
+.desk-cap b{color:#fff}
+.desk-item{transform-box:fill-box;transform-origin:50% 100%;animation:pop .45s cubic-bezier(.2,1.4,.4,1)}
+@keyframes pop{0%{transform:scale(.4) translateY(20px);opacity:0}100%{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.desk-item{animation:none}.cart-btn.bump{animation:none}}
+
+/* perks */
+.perks{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
+.perk{display:flex;gap:12px;align-items:center;padding:18px 24px;font-weight:600}
+.perk + .perk{border-left:1px solid var(--line)}
+.perk small{display:block;font-weight:400;color:var(--ink-2);font-size:14px}
+.perk-ico{width:38px;height:38px;border-radius:10px;background:var(--tint);display:grid;place-items:center;flex:none;color:var(--cobalt)}
+.perk-ico svg{width:20px;height:20px}
+
+/* sections */
+section.block{padding-top:72px}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:24px}
+.sec-head h2{font-size:clamp(26px,3vw,36px);font-weight:700}
+.sec-head p{margin:8px 0 0;color:var(--ink-2);max-width:36em}
+
+/* toolbar */
+.toolbar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:22px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-weight:600;font-size:14.5px;cursor:pointer}
+.chip:hover{border-color:var(--cobalt)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.sort{display:flex;align-items:center;gap:8px;font-size:14.5px;color:var(--ink-2)}
+.sort select{font:inherit;font-size:14.5px;color:var(--ink);padding:7px 10px;border:1.5px solid var(--line);border-radius:10px;background:#fff}
+.result-note{font-size:14.5px;color:var(--ink-2);margin:-8px 0 16px;min-height:22px}
+
+/* product grid */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{border:1.5px solid var(--line);border-radius:var(--radius);background:#fff;display:flex;flex-direction:column;overflow:hidden;transition:border-color .15s}
+.card:hover{border-color:#AEB6EC}
+.card .art{background:var(--tile);aspect-ratio:10/7;display:grid;place-items:center;position:relative;border:0;padding:0;cursor:pointer;width:100%}
+.card .art svg{width:78%;height:auto}
+.tag{position:absolute;top:10px;left:10px;background:var(--ink);color:#fff;font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px}
+.card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.card .cat{font-size:13px;color:var(--ink-2);font-weight:500}
+.card h3{font-family:"Figtree",sans-serif;font-size:17px;font-weight:700;letter-spacing:0;line-height:1.3}
+.card h3 button{all:unset;cursor:pointer}
+.card h3 button:hover{text-decoration:underline;text-underline-offset:3px}
+.card h3 button:focus-visible{outline:3px solid var(--lamp);outline-offset:2px;border-radius:4px}
+.card .desc{font-size:14.5px;color:var(--ink-2);margin:2px 0 10px}
+.card .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.price{font-family:"Unbounded",sans-serif;font-weight:700;font-size:18px;letter-spacing:-.02em}
+.add{border:0;background:var(--cobalt);color:#fff;font-weight:700;font-size:14.5px;border-radius:10px;padding:9px 14px;cursor:pointer;white-space:nowrap}
+.add:hover{background:var(--cobalt-2)}
+.add.in{background:var(--ok)}
+.empty{grid-column:1/-1;text-align:center;padding:48px 20px;border:1.5px dashed var(--line);border-radius:var(--radius);color:var(--ink-2)}
+.empty b{display:block;color:var(--ink);font-size:18px;margin-bottom:6px}
+
+/* bundles */
+.bundles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.bundle{border-radius:var(--radius);padding:24px;background:var(--tint);display:flex;flex-direction:column}
+.bundle h3{font-size:21px;font-weight:700;margin-bottom:8px}
+.bundle p{margin:0 0 16px;color:var(--ink-2)}
+.bundle ul{list-style:none;margin:0 0 18px;padding:0}
+.bundle li{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-size:15px}
+.bundle .totals{display:flex;align-items:baseline;gap:10px;margin:auto 0 14px}
+.bundle .was{text-decoration:line-through;color:var(--ink-2)}
+.bundle .note{font-size:13px;color:var(--ok);font-weight:600}
+
+/* faq */
+.faq{display:grid;grid-template-columns:1fr 1.6fr;gap:40px}
+.faq details{border-bottom:1.5px solid var(--line);padding:16px 0}
+.faq summary{font-weight:700;font-size:17px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";font-family:"Unbounded",sans-serif;font-weight:600;color:var(--cobalt)}
+.faq details[open] summary:after{content:"–"}
+.faq details p{margin:10px 0 0;color:var(--ink-2);max-width:42em}
+
+/* footer */
+footer{margin-top:84px;background:var(--ink);color:#C9CEF0;padding:44px 0 36px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:start}
+footer .brand{color:#fff;margin-bottom:12px}
+footer p{margin:0;max-width:38em;font-size:15px}
+footer a{color:#fff}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end;font-size:15px}
+
+/* drawer + dialogs */
+.scrim{position:fixed;inset:0;background:rgba(16,25,79,.45);z-index:40;opacity:0;pointer-events:none;transition:opacity .2s}
+.scrim.show{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:#fff;z-index:50;display:flex;flex-direction:column;transform:translateX(100%);visibility:hidden;transition:transform .25s ease,visibility 0s linear .25s}
+.drawer.open{transform:none;visibility:visible;box-shadow:-10px 0 30px rgba(16,25,79,.15);transition:transform .25s ease}
+@media (prefers-reduced-motion:reduce){.drawer,.scrim{transition:none}}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:20px 22px;border-bottom:1px solid var(--line)}
+.drawer-head h2{font-size:20px}
+.x{border:0;background:var(--tint);width:36px;height:36px;border-radius:10px;cursor:pointer;font-size:20px;line-height:1}
+.x:hover{background:#E0E4FA}
+.ship{padding:14px 22px;border-bottom:1px solid var(--line);font-size:14.5px}
+.bar{height:8px;border-radius:4px;background:var(--tint);margin-top:8px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--cobalt);border-radius:4px;transition:width .3s}
+.lines{flex:1;overflow:auto;padding:6px 22px}
+.line{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.line .thumb{width:64px;height:48px;border-radius:10px;background:var(--tile);display:grid;place-items:center}
+.line .thumb svg{width:86%}
+.line b{display:block;font-size:15px}
+.line small{color:var(--ink-2)}
+.qty{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:9px;margin-top:6px}
+.qty button{border:0;background:none;width:28px;height:28px;cursor:pointer;font-size:16px;font-weight:700}
+.qty span{min-width:22px;text-align:center;font-weight:600;font-size:14px}
+.rm{border:0;background:none;color:var(--ink-2);font-size:13px;text-decoration:underline;cursor:pointer;margin-left:8px}
+.line .amt{font-weight:700}
+.sums{padding:16px 22px 20px;border-top:1px solid var(--line);background:#FBFBFE}
+.sums div{display:flex;justify-content:space-between;font-size:15px;padding:3px 0}
+.sums .disc{color:var(--ok);font-weight:600}
+.sums .total{font-family:"Unbounded",sans-serif;font-weight:700;font-size:18px;padding-top:10px;margin-top:6px;border-top:1px solid var(--line)}
+.sums .btn{width:100%;margin-top:14px}
+.cart-empty{text-align:center;padding:48px 10px;color:var(--ink-2)}
+.cart-empty b{display:block;color:var(--ink);font-size:17px;margin-bottom:6px}
+
+dialog{border:0;border-radius:20px;padding:0;width:min(760px,calc(100% - 32px));color:var(--ink);box-shadow:0 20px 60px rgba(16,25,79,.3)}
+dialog::backdrop{background:rgba(16,25,79,.5)}
+.pd{display:grid;grid-template-columns:1fr 1fr}
+.pd .art{background:var(--tile);display:grid;place-items:center;padding:30px;min-height:300px}
+.pd .art svg{width:100%;height:auto}
+.pd .info{padding:28px 28px 24px;position:relative;display:flex;flex-direction:column}
+.pd .info .x{position:absolute;top:16px;right:16px}
+.pd .cat{color:var(--ink-2);font-size:14px;font-weight:500}
+.pd h2{font-size:24px;font-weight:700;margin:4px 40px 10px 0}
+.pd .price{font-size:22px;margin-bottom:12px}
+.pd p{margin:0 0 14px;color:var(--ink-2)}
+.pd ul{margin:0 0 20px;padding-left:18px}
+.pd ul li{margin-bottom:5px;font-size:15px}
+.pd .btn{margin-top:auto}
+.co{padding:28px}
+.co h2{font-size:22px;margin-bottom:6px}
+.co .demo-note{background:#FFF6D1;border-radius:12px;padding:12px 14px;font-size:14.5px;margin:12px 0 16px}
+.co ul{list-style:none;padding:0;margin:0 0 12px}
+.co li{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line);font-size:15px}
+.co .row{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;flex-wrap:wrap}
+.done{text-align:center;padding:36px 28px}
+.done .ok{width:64px;height:64px;border-radius:50%;background:#DDF3E7;color:var(--ok);display:grid;place-items:center;margin:0 auto 16px}
+.done h2{font-size:24px;margin-bottom:8px}
+.done p{color:var(--ink-2);margin:0 0 6px}
+.done code{font-family:"Unbounded",sans-serif;font-weight:600;color:var(--ink);font-size:15px}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);width:max-content;background:var(--ink);color:#fff;border-radius:12px;padding:12px 14px 12px 18px;display:flex;gap:14px;align-items:center;z-index:60;opacity:0;pointer-events:none;transition:all .2s;font-size:15px;max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.toast button{border:0;background:var(--lamp);color:var(--ink);font-weight:700;border-radius:8px;padding:6px 12px;cursor:pointer;white-space:nowrap}
+
+/* responsive */
+@media (max-width:1020px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .nav-links{display:none}
+}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;padding:44px 0 40px}
+  .bundles{grid-template-columns:1fr}
+  .faq{grid-template-columns:1fr;gap:8px}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .perks{grid-template-columns:1fr}
+  .perk + .perk{border-left:0;border-top:1px solid var(--line)}
+  .foot-grid{grid-template-columns:1fr}
+  .foot-links{justify-content:flex-start}
+}
+@media (max-width:620px){
+  .nav{gap:10px;height:62px}
+  .brand-text{display:none}
+  .nav-search input{width:100%}
+  .nav-search{flex:1}
+  .pd{grid-template-columns:1fr}
+  .pd .art{min-height:200px;padding:20px}
+  .grid{gap:12px}
+  .card .body{padding:12px}
+  .card .desc{display:none}
+  .card .foot{flex-direction:column;align-items:stretch}
+  .add{width:100%}
+  .wrap{padding:0 16px}
+  .cart-btn .label{display:none}
+}
+</style>
+</head>
+<body>
+<div class="ribbon">Demo store for a class project. <b>Nothing here is for sale</b>, and checkout never asks for payment.</div>
+
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top-of-page" aria-label="Quiet Hours Supply home">
+      <span class="brand-mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M15 2a10 10 0 1 0 7 17A11 11 0 0 1 15 2z" fill="#FFD84D"/></svg></span>
+      <span class="brand-text">Quiet Hours Supply</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#setups">Starter setups</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <label class="nav-search">
+      <span class="sr">Search products</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input type="search" id="search" placeholder="Search lamps, keyboards…" autocomplete="off">
+    </label>
+    <button class="cart-btn" id="open-cart" aria-label="Open cart, 0 items">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20.5" r="1.3"/><circle cx="17" cy="20.5" r="1.3"/></svg>
+      <span class="label">Cart</span><span class="count" id="cart-count">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="top-of-page">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 id="hero-title">Your desk, sorted before finals.</h1>
+        <p class="lede">Lamps, keyboards and focus tools picked for dorm rooms and library carrels. Add something to your cart and watch your desk come together.</p>
+        <div class="hero-actions">
+          <a class="btn btn-lamp" href="#shop">Shop desk gear</a>
+          <a class="btn btn-line" href="#setups">See starter setups</a>
+        </div>
+      </div>
+      <figure class="desk-card" style="margin:0">
+        <div id="desk" role="img" aria-label="Illustration of your desk"></div>
+        <figcaption class="desk-cap"><span id="desk-cap">Your desk is empty. Add gear to fill it.</span><button class="btn btn-lamp" id="desk-clear" style="padding:6px 12px;font-size:13px;border-radius:9px" hidden>Clear desk</button></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="perks">
+      <div class="perk"><span class="perk-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></span><span>Free shipping over $50<small>Orders under $50 ship for $5.99</small></span></div>
+      <div class="perk"><span class="perk-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><span>10% off 3 or more items<small>Applied automatically in your cart</small></span></div>
+      <div class="perk"><span class="perk-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12a8 8 0 1 0 3-6.2M4 4v4h4"/></svg></span><span>30-day returns<small>Unused items in original packaging</small></span></div>
+    </div>
+  </div>
+
+  <section class="block wrap" id="shop" aria-labelledby="shop-title">
+    <div class="sec-head">
+      <div>
+        <h2 id="shop-title">Shop desk gear</h2>
+        <p>Ten things that make a small desk work harder. Every item is under $80.</p>
+      </div>
+    </div>
+    <div class="toolbar">
+      <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+      <label class="sort">Sort by
+        <select id="sort">
+          <option value="featured">Featured</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+          <option value="name">Name</option>
+        </select>
+      </label>
+    </div>
+    <p class="result-note" id="result-note" aria-live="polite"></p>
+    <div class="grid" id="grid"></div>
+    <noscript><p>Turn on JavaScript to browse the products.</p></noscript>
+  </section>
+
+  <section class="block wrap" id="setups" aria-labelledby="setups-title">
+    <div class="sec-head">
+      <div>
+        <h2 id="setups-title">Starter setups</h2>
+        <p>Three ready-made desk kits. Each has three or more items, so the 10% multi-item discount applies.</p>
+      </div>
+    </div>
+    <div class="bundles" id="bundles"></div>
+  </section>
+
+  <section class="block wrap" id="faq" aria-labelledby="faq-title">
+    <div class="faq">
+      <div class="sec-head" style="display:block">
+        <h2 id="faq-title">Questions</h2>
+        <p>Shipping, returns and how this store works.</p>
+      </div>
+      <div>
+        <details open>
+          <summary>Is this a real store?</summary>
+          <p>No. Quiet Hours Supply is a fictional store built for a web design class project. The products, prices and policies are made up. You can add items and go through checkout, but no order is placed and no payment is ever requested.</p>
+        </details>
+        <details>
+          <summary>How does the multi-item discount work?</summary>
+          <p>When your cart has three or more items, 10% comes off your subtotal automatically. Quantities count, so two lamps and a timer qualify.</p>
+        </details>
+        <details>
+          <summary>How much is shipping?</summary>
+          <p>Shipping is free once your order is $50 or more after the discount. Below that it's a flat $5.99. The cart shows how far you are from free shipping.</p>
+        </details>
+        <details>
+          <summary>Why is my cart still here when I come back?</summary>
+          <p>Your cart is saved in your own browser, so it's still there if you close the tab. Nothing is sent anywhere. Use "Clear desk" or remove items to empty it.</p>
+        </details>
+        <details>
+          <summary>Can I return something?</summary>
+          <p>In this demo, the policy is 30 days for unused items in their original packaging.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <a class="brand" href="#top-of-page"><span class="brand-mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M15 2a10 10 0 1 0 7 17A11 11 0 0 1 15 2z" fill="#FFD84D"/></svg></span>Quiet Hours Supply</a>
+      <p>A fictional online store built for a web design class project. Products, prices and policies are invented and nothing is for sale.</p>
+    </div>
+    <div class="foot-links">
+      <a href="#shop">Shop</a>
+      <a href="#setups">Starter setups</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<!-- cart drawer -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-labelledby="cart-title" aria-hidden="true">
+  <div class="drawer-head">
+    <h2 id="cart-title">Your cart</h2>
+    <button class="x" id="close-cart" aria-label="Close cart">×</button>
+  </div>
+  <div class="ship" id="ship"></div>
+  <div class="lines" id="lines"></div>
+  <div class="sums" id="sums"></div>
+</aside>
+
+<!-- product detail -->
+<dialog id="pd" aria-labelledby="pd-title"></dialog>
+<!-- checkout -->
+<dialog id="co" aria-labelledby="co-title"></dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><span id="toast-msg"></span><button id="toast-btn">View cart</button></div>
+
+<script>
+(function(){
+'use strict';
+var INK='#10194F';
+
+/* ---------- product data ---------- */
+var P=[
+ {id:'lamp',name:'Halo Clamp Lamp',cat:'Lighting',price:39,tile:'#FFE9B8',tag:'Staff pick',
+  desc:'Clamps to any desk edge. Warm-to-cool dimming that is easy on your eyes at 2 a.m.',
+  specs:['3 color temperatures, 10 brightness levels','Clamps to desks up to 2.4 in thick','USB-C powered, 6 ft cable']},
+ {id:'keyboard',name:'Quiet 75 Keyboard',cat:'Input',price:69,tile:'#DDE9FF',tag:'Staff pick',
+  desc:'Compact 75% layout with silent switches, so your roommate can sleep.',
+  specs:['Silent linear switches','Bluetooth and USB-C, pairs with 3 devices','Mac and Windows keycaps included']},
+ {id:'stand',name:'Lift Laptop Stand',cat:'Ergonomics',price:32,tile:'#D9F2E4',
+  desc:'Raises your screen to eye level and folds flat into a backpack.',
+  specs:['6 height settings, up to 7 in','Aluminum, weighs 9 oz','Fits laptops 10 to 16 in']},
+ {id:'headphones',name:'Hush ANC Headphones',cat:'Audio',price:79,tile:'#F3E0FF',
+  desc:'Active noise cancelling for loud dorms and louder libraries.',
+  specs:['Up to 40 hours of battery','Transparency mode for announcements','Folds into a hard case']},
+ {id:'timer',name:'Pomo Focus Timer',cat:'Focus',price:18,tile:'#FFDCD3',
+  desc:'Flip it to start a 25, 45 or 60-minute focus block. No phone needed.',
+  specs:['Flip to start, flat to pause','Silent or soft chime','Rechargeable, lasts a month']},
+ {id:'mouse',name:'Arc Silent Mouse',cat:'Input',price:24,tile:'#DDE9FF',
+  desc:'Quiet clicks and a shape that fits small and large hands.',
+  specs:['Silent buttons','Bluetooth and 2.4 GHz receiver','AA battery lasts about 12 months']},
+ {id:'lightbar',name:'Glow Monitor Light Bar',cat:'Lighting',price:34,tile:'#FFE9B8',
+  desc:'Sits on top of your screen and lights the desk without glare on the display.',
+  specs:['Asymmetric beam, no screen glare','Touch dimmer with memory','Fits screens 0.4 to 1.2 in thick']},
+ {id:'hub',name:'Port 7-in-1 USB-C Hub',cat:'Power & cables',price:29,tile:'#E4E7F5',
+  desc:'HDMI, SD card, three USB ports and pass-through charging from one cable.',
+  specs:['4K HDMI at 60 Hz','100 W pass-through charging','SD and microSD readers']},
+ {id:'mat',name:'Grid Desk Mat',cat:'Ergonomics',price:19,tile:'#D9F2E4',
+  desc:'A big felt-top mat with a faint grid. Protects the desk and quiets typing.',
+  specs:['31.5 × 15.7 in','Water-resistant felt top','Non-slip rubber base']},
+ {id:'cables',name:'Coil Cable Kit',cat:'Power & cables',price:15,tile:'#E4E7F5',
+  desc:'Two braided USB-C cables and six clips to keep them off the floor.',
+  specs:['2 × 3 ft USB-C to USB-C, 60 W','6 adhesive cable clips','Braided nylon']}
+];
+var BY={};P.forEach(function(p,i){p.rank=i;BY[p.id]=p});
+var CATS=['All','Lighting','Input','Ergonomics','Audio','Power & cables','Focus'];
+var BUNDLES=[
+ {name:'Library late night',desc:'For long sessions on the third floor.',items:['lamp','headphones','timer']},
+ {name:'Dorm desk starter',desc:'Turns a laptop on a desk into a real workstation.',items:['stand','keyboard','mouse','mat']},
+ {name:'Plug-in kit',desc:'Fixes the not-enough-ports problem for good.',items:['hub','cables','stand']}
+];
+
+/* ---------- product art (front view, ink outlines) ---------- */
+function A(id){
+ var s='stroke="'+INK+'" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"';
+ var w='fill="#fff" '+s, n='fill="none" '+s, k='fill="'+INK+'"', y='fill="#FFD84D" '+s;
+ switch(id){
+ case 'lamp':return '<ellipse cx="62" cy="122" rx="36" ry="8" '+w+'/><path d="M62 118V46L120 28" '+n+'/><path d="M106 22l38 14-14 26z" '+y+'/><path d="M131 62l12 30" stroke="#FFD84D" stroke-width="22" stroke-linecap="round" opacity=".5"/><circle cx="62" cy="46" r="7" '+w+'/>';
+ case 'keyboard':var r='<rect x="16" y="52" width="168" height="62" rx="12" '+w+'/>';for(var i=0;i<3;i++)for(var j=0;j<8;j++)r+='<rect x="'+(28+j*19)+'" y="'+(62+i*14)+'" width="13" height="9" rx="2" '+k+' opacity="'+(i==0&&j==0?1:.82)+'"/>';return r+'<rect x="60" y="100" width="80" height="7" rx="3" '+k+'/>';
+ case 'stand':return '<path d="M60 116l26-44h52" '+n+'/><path d="M140 116l-12-44" '+n+'/><rect x="48" y="112" width="104" height="9" rx="4" '+w+'/><path d="M82 72l62-14" '+n+'/><rect x="88" y="14" width="70" height="46" rx="6" '+w+' transform="rotate(-12 123 37)"/>';
+ case 'headphones':return '<path d="M48 92V70a52 52 0 0 1 104 0v22" fill="none" stroke="'+INK+'" stroke-width="9" stroke-linecap="round"/><rect x="34" y="78" width="30" height="44" rx="12" '+y+'/><rect x="136" y="78" width="30" height="44" rx="12" '+y+'/>';
+ case 'timer':return '<rect x="58" y="40" width="84" height="84" rx="16" '+w+'/><circle cx="100" cy="82" r="26" '+y+'/><path d="M100 82V64M100 82l12 8" '+n+'/><text x="100" y="26" text-anchor="middle" font-family="Unbounded,sans-serif" font-size="13" font-weight="700" fill="'+INK+'">25:00</text>';
+ case 'mouse':return '<rect x="70" y="24" width="60" height="96" rx="30" '+w+'/><path d="M100 24v34M70 58h60" '+n+'/><rect x="95" y="34" width="10" height="16" rx="5" '+k+'/>';
+ case 'lightbar':return '<rect x="34" y="44" width="132" height="78" rx="8" '+w+'/><rect x="58" y="32" width="84" height="14" rx="7" '+y+'/><path d="M70 50l-14 46M100 50v50M130 50l14 46" stroke="#FFD84D" stroke-width="6" stroke-linecap="round" opacity=".7"/><path d="M92 122v8h16v-8" '+n+'/>';
+ case 'hub':return '<rect x="54" y="48" width="104" height="44" rx="14" '+w+'/><rect x="68" y="62" width="14" height="8" rx="2" '+k+'/><rect x="88" y="62" width="14" height="8" rx="2" '+k+'/><rect x="108" y="62" width="14" height="8" rx="2" '+k+'/><rect x="128" y="60" width="18" height="12" rx="3" '+k+'/><path d="M54 70H26c-10 0-12 30 6 34" '+n+'/><rect x="24" y="100" width="22" height="16" rx="4" '+y+'/>';
+ case 'mat':var g='<rect x="14" y="56" width="172" height="60" rx="10" fill="#B9E6CC" '+s+'/>';for(var x=34;x<180;x+=20)g+='<path d="M'+x+' 60v52" stroke="'+INK+'" stroke-width="1.5" opacity=".35"/>';for(var yy=74;yy<116;yy+=18)g+='<path d="M18 '+yy+'h164" stroke="'+INK+'" stroke-width="1.5" opacity=".35"/>';return g;
+ case 'cables':return '<path d="M40 104c0-40 30-40 30-20s-30 20-30-10 40-50 60-20 0 40 20 40 30-20 30-40" '+n+'/><rect x="140" y="46" width="22" height="30" rx="5" '+y+' transform="rotate(20 151 61)"/><rect x="22" y="104" width="34" height="18" rx="5" '+w+'/>';
+ }
+ return '';
+}
+function art(id,cls){return '<svg viewBox="0 0 200 140" aria-hidden="true"'+(cls?' class="'+cls+'"':'')+'>'+A(id)+'</svg>'}
+
+/* ---------- desk scene ---------- */
+function deskSVG(has){
+ var s='stroke="'+INK+'" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"';
+ var w='fill="#fff" '+s, y='fill="#FFD84D" '+s, k='fill="'+INK+'"';
+ var g='<svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg">';
+ // window + moon
+ g+='<rect x="330" y="26" width="190" height="130" rx="10" fill="#2E44D6" stroke="#5A6CE8" stroke-width="3"/><path d="M425 26v130M330 91h190" stroke="#5A6CE8" stroke-width="3"/><path d="M478 44a20 20 0 1 0 14 34 22 22 0 0 1-14-34z" fill="#FFD84D"/>';
+ g+='<circle cx="360" cy="120" r="2" fill="#C7CEFF"/><circle cx="395" cy="48" r="2" fill="#C7CEFF"/><circle cx="500" cy="128" r="2" fill="#C7CEFF"/>';
+ // lamp glow behind everything
+ if(has.lamp) g+='<path d="M175 112L110 300h190z" fill="#FFD84D" opacity=".18" class="desk-item" data-k="lamp"/>';
+ // desk
+ g+='<rect x="30" y="292" width="500" height="16" rx="4" fill="#E9ECFD" '+s+'/><rect x="30" y="306" width="500" height="22" rx="4" fill="#C9D0F8" '+s+'/><path d="M58 328v44M502 328v44" stroke="'+INK+'" stroke-width="10" stroke-linecap="round"/>';
+ // mat (front surface)
+ if(has.mat) g+='<g class="desk-item" data-k=\"mat"><rect x="170" y="294" width="290" height="10" rx="3" fill="#B9E6CC" '+s+'/></g>';
+ // lamp
+ if(has.lamp) g+='<g class="desk-item" data-k=\"lamp"><rect x="64" y="284" width="22" height="22" rx="3" '+w+'/><path d="M75 284V140l90-34" fill="none" stroke="'+INK+'" stroke-width="5" stroke-linecap="round"/><circle cx="75" cy="140" r="6" '+w+'/><path d="M152 96l42 10-18 26z" '+y+'/></g>';
+ // timer
+ if(has.timer) g+='<g class="desk-item" data-k=\"timer"><rect x="100" y="256" width="38" height="38" rx="8" '+w+'/><circle cx="119" cy="275" r="10" '+y+'/></g>';
+ // cables coil
+ if(has.cables) g+='<g class="desk-item" data-k=\"cables"><path d="M150 292c0-14 10-14 10-6s-10 6-10-4 14-16 20-6" fill="none" '+s+'/><rect x="146" y="282" width="10" height="10" rx="2" '+y+'/></g>';
+ // hub
+ if(has.hub) g+='<g class="desk-item" data-k=\"hub"><rect x="178" y="278" width="40" height="16" rx="6" '+w+'/><rect x="186" y="284" width="6" height="4" '+k+'/><rect x="196" y="284" width="6" height="4" '+k+'/><path d="M218 286h12" '+s+'/></g>';
+ // laptop (+ stand + lightbar)
+ var base=has.stand?226:290, sy=base-104;
+ if(has.stand) g+='<g class="desk-item" data-k=\"stand"><path d="M250 294l20-66h74M352 294l-10-66" fill="none" stroke="'+INK+'" stroke-width="5" stroke-linecap="round"/><rect x="240" y="288" width="122" height="8" rx="3" '+w+'/></g>';
+ g+='<g><rect x="236" y="'+sy+'" width="140" height="96" rx="8" '+w+'/><rect x="246" y="'+(sy+10)+'" width="120" height="74" rx="3" fill="#DDE3FF"/>';
+ g+='<path d="M258 '+(sy+30)+'h60M258 '+(sy+44)+'h86M258 '+(sy+58)+'h44" stroke="#8C98E6" stroke-width="5" stroke-linecap="round"/>';
+ g+='<path d="M226 '+(base-6)+'h160l-10 8H236z" '+w+'/></g>';
+ if(has.lightbar) g+='<g class="desk-item" data-k=\"lightbar"><rect x="262" y="'+(sy-12)+'" width="88" height="10" rx="5" '+y+'/><path d="M280 '+(sy-2)+'l-8 22M306 '+(sy-2)+'v22M332 '+(sy-2)+'l8 22" stroke="#FFD84D" stroke-width="4" stroke-linecap="round" opacity=".8"/></g>';
+ // keyboard + mouse (front)
+ if(has.keyboard){var kb='<g class="desk-item" data-k="keyboard"><rect x="232" y="286" width="150" height="14" rx="4" '+w+'/>';for(var i=0;i<9;i++)kb+='<rect x="'+(240+i*15.5)+'" y="290" width="10" height="5" rx="1" '+k+'/>';g+=kb+'</g>';}
+ if(has.mouse) g+='<g class="desk-item" data-k=\"mouse"><rect x="396" y="284" width="20" height="16" rx="8" '+w+'/></g>';
+ // headphones
+ if(has.headphones) g+='<g class="desk-item" data-k=\"headphones"><path d="M448 270a26 26 0 0 1 52 0" fill="none" stroke="'+INK+'" stroke-width="6" stroke-linecap="round"/><rect x="440" y="266" width="16" height="26" rx="6" '+y+'/><rect x="492" y="266" width="16" height="26" rx="6" '+y+'/></g>';
+ // empty hint
+ if(!Object.keys(has).length) g+='<text x="130" y="236" text-anchor="middle" font-family="Figtree,sans-serif" font-size="16" fill="#C7CEFF"><tspan x="130">Add gear and</tspan><tspan x="130" dy="22">it lands here</tspan></text>';
+ return g+'</svg>';
+}
+
+/* ---------- state ---------- */
+var cart={};
+try{var saved=JSON.parse(localStorage.getItem('qh-cart')||'{}');Object.keys(saved).forEach(function(id){if(BY[id]&&saved[id]>0)cart[id]=Math.min(9,saved[id]|0)})}catch(e){}
+function save(){try{localStorage.setItem('qh-cart',JSON.stringify(cart))}catch(e){}}
+var filter='All',sortBy='featured',query='';
+var money=function(n){return '$'+n.toFixed(2).replace(/\.00$/,'')};
+var money2=function(n){return '$'+n.toFixed(2)};
+
+function totals(){
+ var units=0,sub=0;Object.keys(cart).forEach(function(id){units+=cart[id];sub+=cart[id]*BY[id].price});
+ var disc=units>=3?sub*0.10:0, after=sub-disc;
+ var ship=units===0?0:(after>=50?0:5.99);
+ var tax=Math.round(after*0.0825*100)/100;
+ return {units:units,sub:sub,disc:disc,after:after,ship:ship,tax:tax,total:after+ship+tax};
+}
+
+/* ---------- render: chips + grid ---------- */
+var $=function(id){return document.getElementById(id)};
+function renderChips(){
+ $('chips').innerHTML=CATS.map(function(c){return '<button class="chip" aria-pressed="'+(c===filter)+'" data-cat="'+c+'">'+c+'</button>'}).join('');
+}
+function visible(){
+ var q=query.trim().toLowerCase();
+ var list=P.filter(function(p){return (filter==='All'||p.cat===filter)&&(!q||(p.name+' '+p.cat+' '+p.desc).toLowerCase().indexOf(q)>-1)});
+ list.sort(function(a,b){return sortBy==='low'?a.price-b.price:sortBy==='high'?b.price-a.price:sortBy==='name'?a.name.localeCompare(b.name):a.rank-b.rank});
+ return list;
+}
+function renderGrid(){
+ var list=visible();
+ $('grid').innerHTML=list.length?list.map(function(p){
+  var inCart=cart[p.id]>0;
+  return '<article class="card" style="--tile:'+p.tile+'">'+
+   '<button class="art" data-open="'+p.id+'" aria-label="View details for '+p.name+'">'+(p.tag?'<span class="tag">'+p.tag+'</span>':'')+art(p.id)+'</button>'+
+   '<div class="body"><span class="cat">'+p.cat+'</span><h3><button data-open="'+p.id+'">'+p.name+'</button></h3><p class="desc">'+p.desc+'</p>'+
+   '<div class="foot"><span class="price">'+money(p.price)+'</span><button class="add'+(inCart?' in':'')+'" data-add="'+p.id+'">'+(inCart?'In cart ('+cart[p.id]+')':'Add to cart')+'</button></div></div></article>';
+ }).join(''):'<div class="empty"><b>No products match "'+esc(query)+'".</b>Try another word, or <button class="chip" id="reset-filters" style="margin-top:10px">show all products</button></div>';
+ var note=(filter!=='All'||query)?'Showing '+list.length+' of '+P.length+' products'+(filter!=='All'?' in '+filter:'')+(query?' matching "'+esc(query)+'"':'')+'.':'';
+ $('result-note').textContent=note;
+}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+/* ---------- bundles ---------- */
+function renderBundles(){
+ $('bundles').innerHTML=BUNDLES.map(function(b,i){
+  var sum=b.items.reduce(function(a,id){return a+BY[id].price},0);
+  return '<article class="bundle"><h3>'+b.name+'</h3><p>'+b.desc+'</p><ul>'+b.items.map(function(id){return '<li><span>'+BY[id].name+'</span><span>'+money(BY[id].price)+'</span></li>'}).join('')+'</ul>'+
+   '<div class="totals"><span class="price">'+money2(sum*0.9)+'</span><span class="was">'+money(sum)+'</span><span class="note">10% off</span></div>'+
+   '<button class="btn btn-ink" data-bundle="'+i+'">Add setup to cart</button></article>';
+ }).join('');
+}
+
+/* ---------- desk ---------- */
+var lastDesk={};
+function renderDesk(){
+ var has={};Object.keys(cart).forEach(function(id){has[id]=true});
+ $('desk').innerHTML=deskSVG(has);
+ // only animate items that were just added
+ var items=$('desk').querySelectorAll('.desk-item');
+ items.forEach(function(el){if(firstPaint||lastDesk[el.getAttribute('data-k')])el.style.animation='none'});
+ lastDesk=has;
+ var n=Object.keys(has).length;
+ $('desk-cap').innerHTML=n?'<b>'+n+' of '+P.length+'</b> desk items in your cart':'Your desk is empty. Add gear to fill it.';
+ $('desk-clear').hidden=!n;
+ $('desk').setAttribute('aria-label','Illustration of a desk'+(n?' with: '+Object.keys(has).map(function(id){return BY[id].name}).join(', '):', currently empty'));
+}
+var firstPaint=true;
+
+/* ---------- cart drawer ---------- */
+function renderCart(){
+ var t=totals(), ids=Object.keys(cart);
+ $('cart-count').textContent=t.units;
+ $('open-cart').setAttribute('aria-label','Open cart, '+t.units+' item'+(t.units===1?'':'s'));
+ var left=Math.max(0,50-t.after);
+ $('ship').innerHTML=t.units===0?'Free shipping on orders of $50 or more.':(left>0?'You are <b>'+money2(left)+'</b> away from free shipping.':'<b>You get free shipping.</b>')+
+  '<div class="bar" aria-hidden="true"><i style="width:'+Math.min(100,t.after/50*100)+'%"></i></div>'+(t.units>0&&t.units<3?'<div style="margin-top:8px;color:var(--ink-2)">Add '+(3-t.units)+' more item'+(3-t.units===1?'':'s')+' to get 10% off.</div>':'');
+ $('lines').innerHTML=ids.length?ids.map(function(id){var p=BY[id];return '<div class="line" style="--tile:'+p.tile+'"><div class="thumb">'+art(id)+'</div><div><b>'+p.name+'</b><small>'+money(p.price)+' each</small><div><span class="qty"><button data-dec="'+id+'" aria-label="Decrease quantity of '+p.name+'">−</button><span>'+cart[id]+'</span><button data-inc="'+id+'" aria-label="Increase quantity of '+p.name+'">+</button></span><button class="rm" data-rm="'+id+'">Remove</button></div></div><span class="amt">'+money2(p.price*cart[id])+'</span></div>'}).join(''):
+  '<div class="cart-empty"><b>Your cart is empty.</b>Add a lamp or a keyboard to get started.</div>';
+ $('sums').innerHTML=ids.length?'<div><span>Subtotal</span><span>'+money2(t.sub)+'</span></div>'+(t.disc?'<div class="disc"><span>Multi-item discount (10%)</span><span>−'+money2(t.disc)+'</span></div>':'')+
+  '<div><span>Shipping</span><span>'+(t.ship?money2(t.ship):'Free')+'</span></div><div><span>Estimated tax (8.25%)</span><span>'+money2(t.tax)+'</span></div>'+
+  '<div class="total"><span>Total</span><span>'+money2(t.total)+'</span></div><button class="btn btn-ink" id="checkout">Go to demo checkout</button>':'<a class="btn btn-ghost" href="#shop" id="cart-shop" style="width:100%">Browse products</a>';
+}
+function renderAll(){renderGrid();renderCart();renderDesk();save();firstPaint=false}
+
+function add(id,n,quiet){cart[id]=Math.min(9,(cart[id]||0)+(n||1));renderAll();bump();if(!quiet)toast('Added '+BY[id].name+'. It is on your desk now.')}
+function bump(){var b=$('open-cart');b.classList.remove('bump');void b.offsetWidth;b.classList.add('bump')}
+
+/* ---------- toast ---------- */
+var tt;function toast(msg){$('toast-msg').textContent=msg;$('toast').classList.add('show');clearTimeout(tt);tt=setTimeout(function(){$('toast').classList.remove('show')},3200)}
+
+/* ---------- drawer open/close ---------- */
+var lastFocus;
+function openCart(){lastFocus=document.activeElement;$('drawer').classList.add('open');$('scrim').classList.add('show');$('drawer').setAttribute('aria-hidden','false');$('toast').classList.remove('show');setTimeout(function(){$('close-cart').focus()},50)}
+function closeCart(){$('drawer').classList.remove('open');$('scrim').classList.remove('show');$('drawer').setAttribute('aria-hidden','true');if(lastFocus)lastFocus.focus()}
+
+/* ---------- product dialog ---------- */
+function openProduct(id){
+ var p=BY[id],d=$('pd');
+ d.innerHTML='<div class="pd" style="--tile:'+p.tile+'"><div class="art">'+art(p.id)+'</div><div class="info"><button class="x" data-close aria-label="Close">×</button><span class="cat">'+p.cat+'</span><h2 id="pd-title">'+p.name+'</h2><div class="price">'+money(p.price)+'</div><p>'+p.desc+'</p><ul>'+p.specs.map(function(s){return '<li>'+s+'</li>'}).join('')+'</ul><button class="btn btn-ink" data-add="'+p.id+'" data-close-after>'+(cart[id]?'Add another':'Add to cart')+'</button></div></div>';
+ if(d.showModal)d.showModal();else d.setAttribute('open','');
+}
+
+/* ---------- checkout dialog ---------- */
+function openCheckout(){
+ var t=totals(),d=$('co');
+ d.innerHTML='<div class="co"><h2 id="co-title">Review your order</h2><div class="demo-note"><b>This is a demo checkout.</b> Placing the order only shows a confirmation screen. No payment details are asked for, nothing is charged and nothing ships.</div><ul>'+
+  Object.keys(cart).map(function(id){return '<li><span>'+BY[id].name+' × '+cart[id]+'</span><span>'+money2(BY[id].price*cart[id])+'</span></li>'}).join('')+'</ul>'+
+  (t.disc?'<div style="display:flex;justify-content:space-between;color:var(--ok);font-weight:600;padding:4px 0;font-size:15px"><span>Multi-item discount</span><span>−'+money2(t.disc)+'</span></div>':'')+
+  '<div style="display:flex;justify-content:space-between;padding:4px 0;font-size:15px"><span>Shipping</span><span>'+(t.ship?money2(t.ship):'Free')+'</span></div><div style="display:flex;justify-content:space-between;padding:4px 0;font-size:15px"><span>Estimated tax</span><span>'+money2(t.tax)+'</span></div>'+
+  '<div style="display:flex;justify-content:space-between;font-family:Unbounded,sans-serif;font-weight:700;font-size:18px;padding-top:10px;margin-top:6px;border-top:1px solid var(--line)"><span>Total</span><span>'+money2(t.total)+'</span></div>'+
+  '<div class="row"><button class="btn btn-ghost" data-close>Back to cart</button><button class="btn btn-ink" id="place">Place demo order</button></div></div>';
+ if(d.showModal)d.showModal();else d.setAttribute('open','');
+}
+function placeOrder(){
+ var t=totals(),num='QH-'+(10000+Math.floor(Math.random()*89999)),n=t.units;
+ cart={};renderAll();
+ $('co').innerHTML='<div class="done"><div class="ok" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div><h2 id="co-title">Demo order placed</h2><p>Order <code>'+num+'</code> for '+n+' item'+(n===1?'':'s')+', '+money2(t.total)+'.</p><p>Nothing was charged and nothing will ship. Your cart and desk have been cleared.</p><div class="row" style="justify-content:center;display:flex;margin-top:18px"><button class="btn btn-ink" data-close>Keep browsing</button></div></div>';
+}
+
+/* ---------- events ---------- */
+document.addEventListener('click',function(e){
+ var el=e.target.closest('[data-add],[data-open],[data-bundle],[data-inc],[data-dec],[data-rm],[data-close],[data-cat],#checkout,#place,#reset-filters,#cart-shop,#desk-clear');
+ if(!el)return;
+ if(el.dataset.cat){filter=el.dataset.cat;renderChips();renderGrid();return}
+ if(el.id==='reset-filters'){filter='All';query='';$('search').value='';renderChips();renderGrid();return}
+ if(el.dataset.add){add(el.dataset.add);if(el.hasAttribute('data-close-after'))el.closest('dialog').close();return}
+ if(el.dataset.open){openProduct(el.dataset.open);return}
+ if(el.dataset.bundle){BUNDLES[+el.dataset.bundle].items.forEach(function(id){add(id,1,true)});toast('Added the '+BUNDLES[+el.dataset.bundle].name+' setup.');return}
+ if(el.dataset.inc){cart[el.dataset.inc]=Math.min(9,cart[el.dataset.inc]+1);renderAll();return}
+ if(el.dataset.dec){var id=el.dataset.dec;cart[id]--;if(cart[id]<=0)delete cart[id];renderAll();return}
+ if(el.dataset.rm){delete cart[el.dataset.rm];renderAll();return}
+ if(el.id==='checkout'){closeCart();openCheckout();return}
+ if(el.id==='place'){placeOrder();return}
+ if(el.id==='cart-shop'){closeCart();return}
+ if(el.id==='desk-clear'){cart={};renderAll();return}
+ if(el.hasAttribute('data-close')){var d=el.closest('dialog');d.close();if(d.id==='co'&&Object.keys(cart).length&&el.textContent==='Back to cart')openCart();return}
+});
+$('open-cart').addEventListener('click',openCart);
+$('close-cart').addEventListener('click',closeCart);
+$('scrim').addEventListener('click',closeCart);
+$('toast-btn').addEventListener('click',openCart);
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&$('drawer').classList.contains('open'))closeCart()});
+['pd','co'].forEach(function(id){$(id).addEventListener('click',function(e){if(e.target===this)this.close()})});
+$('sort').addEventListener('change',function(){sortBy=this.value;renderGrid()});
+$('search').addEventListener('input',function(){query=this.value;renderGrid()});
+$('search').addEventListener('keydown',function(e){if(e.key==='Enter'){document.getElementById('shop').scrollIntoView({behavior:'smooth'})}});
+
+renderChips();renderBundles();renderAll();
+})();
+</script>
+</body>
+</html>
